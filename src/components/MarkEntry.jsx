@@ -144,18 +144,36 @@ const MarkEntry = () => {
       </form>
 
       <h3>Mark List</h3>
-      <ul>
-        {markList.map((mark, index) => (
-          <li key={mark.id}>
-            <span>
-              Subject 1: {mark.subject1}, Subject 2: {mark.subject2}, Subject 3: {mark.subject3}, 
-              Subject 4: {mark.subject4}, Subject 5: {mark.subject5}
-            </span>
-            <button onClick={() => handleEdit(index)}>Edit</button>
-            <button onClick={() => handleDelete(mark.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+<table border="1" style={{ width: "100%", textAlign: "left", borderCollapse: "collapse" }}>
+  <thead>
+    <tr>
+      <th>S.no</th>
+      <th>Subject 1</th>
+      <th>Subject 2</th>
+      <th>Subject 3</th>
+      <th>Subject 4</th>
+      <th>Subject 5</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {markList.map((mark, index) => (
+      <tr key={mark.id}>
+        <td>{index + 1}</td>
+        <td>{mark.subject1}</td>
+        <td>{mark.subject2}</td>
+        <td>{mark.subject3}</td>
+        <td>{mark.subject4}</td>
+        <td>{mark.subject5}</td>
+        <td>
+          <button onClick={() => handleEdit(index)}>Edit</button>
+          <button onClick={() => handleDelete(mark.id)}>Delete</button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
     </div>
   );
 };
