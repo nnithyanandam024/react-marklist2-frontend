@@ -8,6 +8,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/marks" element={<MarkEntry />} />
+      <Route path="*" element={<div>404 - Page Not Found</div>} />
     </Routes>
   );
 }
